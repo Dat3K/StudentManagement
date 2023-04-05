@@ -1,0 +1,11 @@
+D:\HT\CNPM\StudentManagement\StudentManagement\bin\Debug\StudentManagement.exe.config
+D:\HT\CNPM\StudentManagement\StudentManagement\bin\Debug\StudentManagement.exe
+D:\HT\CNPM\StudentManagement\StudentManagement\bin\Debug\StudentManagement.pdb
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.csproj.AssemblyReference.cache
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.csproj.SuggestedBindingRedirects.cache
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Login.resources
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Properties.Resources.resources
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.csproj.GenerateResource.cache
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.csproj.CoreCompileInputs.cache
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.exe
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.pdb

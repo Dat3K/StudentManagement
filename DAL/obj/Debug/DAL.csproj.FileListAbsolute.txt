@@ -1,0 +1,9 @@
+D:\HT\CNPM\StudentManagement\DAL\bin\Debug\DAL.dll
+D:\HT\CNPM\StudentManagement\DAL\bin\Debug\DAL.pdb
+D:\HT\CNPM\StudentManagement\DAL\bin\Debug\DTO.dll
+D:\HT\CNPM\StudentManagement\DAL\bin\Debug\DTO.pdb
+D:\HT\CNPM\StudentManagement\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\HT\CNPM\StudentManagement\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\HT\CNPM\StudentManagement\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\HT\CNPM\StudentManagement\DAL\obj\Debug\DAL.dll
+D:\HT\CNPM\StudentManagement\DAL\obj\Debug\DAL.pdb
