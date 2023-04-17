@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.Security.Cryptography;
 
 namespace DAL
 {
     public class Connection
     {
-        public static SqlConnection cn;
-
-        public static void Connect()
+        private static SqlConnection conn = GetConnection();
+        private static string GetConnectionString()
         {
             SqlConnectionStringBuilder builder;
             string serverName = "THANHDAT";
@@ -28,23 +28,38 @@ namespace DAL
 
             builder["Password"] = "";
 
-            string connectionString = builder.ConnectionString;
-            cn = new SqlConnection(connectionString);
-            cn.Open();
+            return builder.ConnectionString;
+        }
+        // Hàm kết nối đến cơ sở dữ liệu
+        public static SqlConnection GetConnection()
+        {
+            SqlConnection connection = new SqlConnection(GetConnectionString());
+            connection.Open();
+            return connection;
+        }
+
+        // Hàm ngắt kết nối đến cơ sở dữ liệu
+        public static void CloseConnection(SqlConnection connection)
+        {
+            connection.Close();
         }
 
 
-        public static void AcctionQuery(string sql)
+        public static int AcctionParamQuery(string queryString, SqlParameter[] parameters)
         {
-            Connect();
-            SqlCommand cmd = new SqlCommand(sql, cn);
-            cmd.ExecuteNonQuery();
+            using (SqlCommand command = new SqlCommand(queryString, conn))
+            {
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                }
+                return command.ExecuteNonQuery();
+            }
         }
 
         public static DataTable SelectQuery(string sql)
         {
-            Connect();
-            SqlDataAdapter dta = new SqlDataAdapter(sql, cn);
+            SqlDataAdapter dta = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             dta.Fill(dt);
             return dt;

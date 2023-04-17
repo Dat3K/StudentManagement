@@ -24,7 +24,7 @@ namespace StudentManagement
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Home form = new Home();
             if (this.Visible)
             {
                 this.Visible = false;

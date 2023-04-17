@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace StudentManagement
 {
-    public partial class Form1 : Form
+    public partial class Teacher : Form
     {
-        BUS_Student BUS_Student= new BUS_Student("", null, "", "", "", "", "", "", "", "");
-        public Form1()
+        public Teacher()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Teacher_Load(object sender, EventArgs e)
         {
-            dgvStudent.DataSource=BUS_Student.GetData();
+            dataStaff.DataSource= BUS_Student.GetData();
+            dataStaff.AutoResizeColumns();
         }
     }
 }

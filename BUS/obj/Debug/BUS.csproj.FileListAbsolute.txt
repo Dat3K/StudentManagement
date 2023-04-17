@@ -9,3 +9,14 @@ D:\HT\CNPM\StudentManagement\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\HT\CNPM\StudentManagement\BUS\obj\Debug\BUS.csproj.CopyComplete
 D:\HT\CNPM\StudentManagement\BUS\obj\Debug\BUS.dll
 D:\HT\CNPM\StudentManagement\BUS\obj\Debug\BUS.pdb
+D:\HT\CNPM\CK\BUS\bin\Debug\BUS.dll
+D:\HT\CNPM\CK\BUS\bin\Debug\BUS.pdb
+D:\HT\CNPM\CK\BUS\bin\Debug\DAL.dll
+D:\HT\CNPM\CK\BUS\bin\Debug\DTO.dll
+D:\HT\CNPM\CK\BUS\bin\Debug\DAL.pdb
+D:\HT\CNPM\CK\BUS\bin\Debug\DTO.pdb
+D:\HT\CNPM\CK\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\HT\CNPM\CK\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\HT\CNPM\CK\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\HT\CNPM\CK\BUS\obj\Debug\BUS.dll
+D:\HT\CNPM\CK\BUS\obj\Debug\BUS.pdb
