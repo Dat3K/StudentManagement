@@ -39,13 +39,21 @@ namespace DAL
         }
 
         // Hàm ngắt kết nối đến cơ sở dữ liệu
-        public static void CloseConnection(SqlConnection connection)
+        public static void CloseConnection()
         {
-            connection.Close();
+            conn.Close();
+        }
+
+        public static DataTable GetMaxIdRow(string queryString)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(queryString, conn);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            return dataTable;
         }
 
 
-        public static int AcctionParamQuery(string queryString, SqlParameter[] parameters)
+        public static int ActionParamQuery(string queryString, SqlParameter[] parameters)
         {
             using (SqlCommand command = new SqlCommand(queryString, conn))
             {

@@ -14,9 +14,12 @@ namespace StudentManagement
 {
     public partial class Student : Form
     {
+        private string idStudent;
         public Student()
         {
             InitializeComponent();
+            btnDel.Enabled = false;
+            btnChg.Enabled = false;
         }
 
         private void Student_Load(object sender, EventArgs e)
@@ -26,7 +29,41 @@ namespace StudentManagement
 
         private void btnAddStud_Click(object sender, EventArgs e)
         {
-            
+            ManageStudent addStudent = new ManageStudent();
+            addStudent.ShowDialog();
+            if (addStudent.isClosed)
+            {
+                Student_Load(sender, e);
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            BUS_Student.DelStudent(idStudent);
+            MessageBox.Show("Xoá thành công");
+            Student_Load(sender, e);
+        }
+
+        private void dataStudent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                btnDel.Enabled = true;
+                btnChg.Enabled = true;
+                DataGridViewRow row = this.dataStudent.Rows[e.RowIndex];
+                idStudent = row.Cells[0].Value.ToString();
+            }
+        }
+
+        private void btnChg_Click(object sender, EventArgs e)
+        {
+            ManageStudent addStudent = new ManageStudent();
+            addStudent.id=idStudent;
+            addStudent.ShowDialog();
+            if (addStudent.isClosed)
+            {
+                Student_Load(sender, e);
+            }
         }
     }
 }
