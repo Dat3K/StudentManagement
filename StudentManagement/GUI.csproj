@@ -131,6 +131,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\Menu\ph_student-bold.png" />
+    <None Include="img\Menu\mdi_teacher.png" />
+    <None Include="img\Menu\material-symbols_menu-book-outline-rounded.png" />
     <None Include="img\Student\StudentPage.png" />
     <None Include="img\Staff\Teacher.png" />
     <None Include="img\Menu\Teacher.png" />

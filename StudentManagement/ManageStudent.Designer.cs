@@ -53,6 +53,7 @@
             this.btnGirl = new System.Windows.Forms.RadioButton();
             this.btnBoy = new System.Windows.Forms.RadioButton();
             this.txtDate = new System.Windows.Forms.MaskedTextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.boxStudent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -264,7 +265,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 36);
             this.btnAdd.TabIndex = 23;
-            this.btnAdd.Text = "Lưu";
+            this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -330,12 +331,24 @@
             this.txtDate.TabIndex = 23;
             this.txtDate.ValidatingType = typeof(System.DateTime);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(633, 39);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 36);
+            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.Text = "Lưu";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // ManageStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(835, 482);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.boxStudent);
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -377,5 +390,6 @@
         private System.Windows.Forms.MaskedTextBox txtDate;
         private System.Windows.Forms.RadioButton btnGirl;
         private System.Windows.Forms.RadioButton btnBoy;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

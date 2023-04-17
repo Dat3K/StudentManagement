@@ -24,12 +24,13 @@ namespace StudentManagement
 
         private void Student_Load(object sender, EventArgs e)
         {
-            dataStudent.DataSource= BUS_Student.GetData();
+            dataStudent.DataSource = BUS_Student.GetData();
         }
 
         private void btnAddStud_Click(object sender, EventArgs e)
         {
             ManageStudent addStudent = new ManageStudent();
+            addStudent.type = "add";
             addStudent.ShowDialog();
             if (addStudent.isClosed)
             {
@@ -58,7 +59,8 @@ namespace StudentManagement
         private void btnChg_Click(object sender, EventArgs e)
         {
             ManageStudent addStudent = new ManageStudent();
-            addStudent.id=idStudent;
+            addStudent.type = "update";
+            addStudent.id = idStudent;
             addStudent.ShowDialog();
             if (addStudent.isClosed)
             {

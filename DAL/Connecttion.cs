@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Security.Cryptography;
+using System.Collections;
 
 namespace DAL
 {
@@ -73,5 +74,19 @@ namespace DAL
             return dt;
         }
 
+        public static DataTable SelectParamQuery(string queryString, SqlParameter[] parameters)
+        {
+            using (SqlCommand command = new SqlCommand(queryString, conn))
+            {
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                }
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
     }
 }

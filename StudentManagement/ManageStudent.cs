@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DAL;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -18,16 +19,55 @@ namespace StudentManagement
     {
         public bool isClosed = false;
         public string id;
+        public DTO_Student student;
+        public string type;
         public ManageStudent()
         {
             InitializeComponent();
+            btnUpdate.Hide();
+            btnAdd.Hide();
             btnBoy.Checked = true;
         }
 
-
         private void AddStudent_Load(object sender, EventArgs e)
         {
-            txtID.Text = GetId();
+            if (type == "add")
+            {
+                btnAdd.Show();
+                txtID.Text = GetId();
+            }
+            else if (type == "update")
+            {
+                btnUpdate.Show();
+                student = getStudent();
+                txtID.Text = student.Id;
+                txtName.Text = student.FullName;
+                txtDate.Text = student.DateOfBirth.ToString();
+                if (student.Gender == "Nam")
+                {
+                    btnBoy.Checked = true;
+                    btnGirl.Checked = false;
+
+                }
+                else
+                {
+                    btnBoy.Checked = false;
+                    btnGirl.Checked = true;
+                }
+                txtAddress.Text = student.Address;
+                txtEmail.Text = student.Email;
+                txtPhone.Text = student.PhoneNumber;
+                txtEduLv.Text = student.EducationLevel;
+                txtMajor.Text = student.Major;
+                txtWorkExp.Text = student.WorkExperience;
+                txtLang.Text = student.Language;
+            }
+            else MessageBox.Show("Lỗi");
+        }
+
+        private DTO_Student getStudent()
+        {
+            return BUS_Student.GetStudentById(id);
         }
 
         // Hàm lấy ID mới
@@ -74,13 +114,19 @@ namespace StudentManagement
             }
 
             DTO_Student student = new DTO_Student(txtID.Text, txtName.Text, date, getSex(), txtAddress.Text, txtPhone.Text, txtEmail.Text, txtEduLv.Text, txtMajor.Text, txtWorkExp.Text, txtLang.Text);
-            int numRows = BUS_Student.AddStudent(student);
-            if (numRows > 0)
+            
+            if (BUS_Student.AddStudent(student))
             {
                 MessageBox.Show("Thêm học viên thành công");
+                AddStudent_Load(sender,e);
                 return;
             }
             MessageBox.Show("Thêm học viên thất bại");
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

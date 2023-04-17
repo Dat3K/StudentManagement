@@ -8,21 +8,6 @@ namespace DTO
 {
     public class DTO_Student
     {
-        public DTO_Student()
-        {
-            this.Id = null;
-            this.FullName = null;
-            this.DateOfBirth = null;
-            this.Gender = null;
-            this.Address = null;
-            this.PhoneNumber = null;
-            this.Email = null;
-            this.EducationLevel = null;
-            this.Major = null;
-            this.WorkExperience = null;
-            this.Language = null;
-        }
-
         public DTO_Student(string id, string fullName, DateTime? dOB, string gen, string address, string phone, string email, string eduLv, string major, string workExp, string lang)
         {
             this.Id = id;

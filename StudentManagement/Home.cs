@@ -12,6 +12,7 @@ namespace StudentManagement
 {
     public partial class Home : Form
     {
+        private Button btnClicked;
         public Home()
         {
             InitializeComponent();
@@ -19,32 +20,43 @@ namespace StudentManagement
 
         private void Home_Load(object sender, EventArgs e)
         {
+            btnClicked = btnHome;
+            btnHome.BackColor = Color.FromArgb(141, 153, 174);
+            btnHome.ForeColor = Color.FromArgb(217, 4, 41);
+        }
 
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            SetBtnClickedColor(sender);
         }
 
         private void btnTeacher_Click(object sender, EventArgs e)
         {
-            
+            SetBtnClickedColor(sender);
         }
 
-        private void button_MouseHover(object sender, EventArgs e)
+        private void btnCourse_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            btn.BackColor = Color.White;
-        }
-
-        private void btn_Hover(object sender, EventArgs e)
-        {
-            this.btnHome.MouseHover += new EventHandler(button_MouseHover);
-            this.btnCourse.MouseHover += new EventHandler(button_MouseHover);
-            this.btnTeacher.MouseHover += new EventHandler(button_MouseHover);
-            this.btnStudent.MouseHover += new EventHandler(button_MouseHover);
-            
+            SetBtnClickedColor(sender);
         }
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
+            SetBtnClickedColor(sender);
             openChidForm(new Student());
+        }
+
+        private void SetBtnClickedColor(object sender)
+        {
+            Button btn = sender as Button;
+            if (btnClicked != btn)
+            {
+                btn.BackColor = Color.FromArgb(141, 153, 174);
+                btn.ForeColor = Color.FromArgb(217, 4, 41);
+                btnClicked.BackColor = Color.FromArgb(43, 45, 66);
+                btnClicked.ForeColor = Color.FromArgb(237, 242, 244);
+                btnClicked = btn;
+            }
         }
 
         private void openChidForm(Form form)
@@ -57,5 +69,25 @@ namespace StudentManagement
             this.mainScreen.Controls.Add(form);
             form.Show();
         }
+
+        private void BtnMouseEnter(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                btn.Font = new Font(btn.Font.Name, btn.Font.Size + 2, btn.Font.Style);
+            }
+        }
+
+        private void BtnMouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                btn.Font = new Font(btn.Font.Name, btn.Font.Size - 2, btn.Font.Style);
+            }
+        }
+
+
     }
 }
