@@ -46,17 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageStudent.Designer.cs">
       <DependentUpon>ManageStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -78,11 +84,14 @@
     <Compile Include="Student.Designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageStudent.resx">
       <DependentUpon>ManageStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -136,11 +145,8 @@
     <None Include="img\Menu\material-symbols_menu-book-outline-rounded.png" />
     <None Include="img\Student\StudentPage.png" />
     <None Include="img\Staff\Teacher.png" />
-    <None Include="img\Menu\Teacher.png" />
-    <None Include="img\Menu\Student.png" />
     <None Include="img\Menu\Icon.png" />
     <None Include="img\Menu\Home.png" />
-    <None Include="img\Menu\Course.png" />
     <None Include="img\Home\Course.png" />
     <None Include="img\Home\Home.png" />
     <None Include="img\Home\Icon.png" />

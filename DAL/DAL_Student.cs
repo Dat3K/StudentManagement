@@ -12,7 +12,6 @@ namespace DAL
 {
     public static class DAL_Student
     {
-        private static DTO_Student Student;
 
         public static int AddStudent(DTO_Student student)
         {

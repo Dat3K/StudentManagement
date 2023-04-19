@@ -40,3 +40,4 @@ D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Home.
 D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Teacher.resources
 D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Student.resources
 D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.ManageStudent.resources
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Main.resources

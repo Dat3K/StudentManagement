@@ -21,6 +21,8 @@ namespace StudentManagement
         public string id;
         public DTO_Student student;
         public string type;
+        private DateTime date;
+
         public ManageStudent()
         {
             InitializeComponent();
@@ -97,36 +99,72 @@ namespace StudentManagement
         // Hàm nhấn nút Thêm
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            foreach (Control item in boxStudent.Controls)
-            {
-                if (item is TextBox && item.Text == "")
-                {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-                    return;
-                }
-            }
-
-            DateTime date;
-            if (!DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out date) || date > DateTime.Now)
-            {
-                MessageBox.Show("Nhập sai ngày sinh" + date.ToString());
-                return;
-            }
+            if (IsValid() == false) return;
 
             DTO_Student student = new DTO_Student(txtID.Text, txtName.Text, date, getSex(), txtAddress.Text, txtPhone.Text, txtEmail.Text, txtEduLv.Text, txtMajor.Text, txtWorkExp.Text, txtLang.Text);
-            
+
             if (BUS_Student.AddStudent(student))
             {
                 MessageBox.Show("Thêm học viên thành công");
-                AddStudent_Load(sender,e);
+                refreshTextBox();
                 return;
             }
             MessageBox.Show("Thêm học viên thất bại");
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        //  Hàm check giá trị
+        private bool IsValid()
         {
+            bool isValid;
+            CheckVariable(out date, out isValid);
+            return isValid;
+        }
+        private void CheckVariable(out DateTime date, out bool isValid)
+        {
+            if (!DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out date) || date > DateTime.Now)
+            {
+                MessageBox.Show("Nhập sai ngày sinh" + date.ToString());
+                isValid = false;
+                return;
+            }
+            foreach (Control item in boxStudent.Controls)
+            {
+                if (item is TextBox && item.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                    isValid = false;
+                    return;
+                }
+            }
+            isValid = true;
 
         }
+
+        // Làm mới textbox
+        private void refreshTextBox()
+        {
+            foreach (Control item in boxStudent.Controls)
+            {
+                if (item is TextBox && item.Name != txtID.Name)
+                {
+                    item.Text = "";
+                }
+                if (item is MaskedTextBox) item.Text = "";
+            }
+        }
+
+        //  Nút Update
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (IsValid() == false) return;
+            DTO_Student student = new DTO_Student(txtID.Text, txtName.Text, date, getSex(), txtAddress.Text, txtPhone.Text, txtEmail.Text, txtEduLv.Text, txtMajor.Text, txtWorkExp.Text, txtLang.Text);
+            if (BUS_Student.UpdateStudent(student))
+            {
+                MessageBox.Show("Sửa học viên thành công");
+                return;
+            }
+            MessageBox.Show("Sửa học viên thất bại");
+        }
+
     }
 }

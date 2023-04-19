@@ -39,6 +39,16 @@ namespace BUS
             return null;
         }
 
+        public static int GetStudentCount()
+        {
+            return DAL_Student.GetData().Rows.Count;
+        }
+
+        public static DataTable GetAStudentData(string id)
+        {
+            return DAL_Student.GetStudentById(id);
+        }
+
         public static void DelStudent(string id)
         {
             DAL_Student.DelStudent(id);
@@ -61,11 +71,7 @@ namespace BUS
 
         public static bool UpdateStudent(DTO_Student student)
         {
-            if(DAL_Student.UpdateStudent(student) > 0)
-            {
-                return true;
-            }
-            return false;
+            return DAL_Student.UpdateStudent(student) > 0;
         }
     }
 }

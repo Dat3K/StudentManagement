@@ -34,12 +34,15 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.txtFind = new System.Windows.Forms.TextBox();
             this.btnChg = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataStudent)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::StudentManagement.Properties.Resources.StudentPage;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -98,6 +101,7 @@
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(179, 28);
             this.txtFind.TabIndex = 4;
+            this.txtFind.Validated += new System.EventHandler(this.txtFind_Validated);
             // 
             // btnChg
             // 
@@ -113,17 +117,41 @@
             this.btnChg.UseVisualStyleBackColor = false;
             this.btnChg.Click += new System.EventHandler(this.btnChg_Click);
             // 
+            // btnFind
+            // 
+            this.btnFind.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
+            this.btnFind.FlatAppearance.BorderSize = 0;
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.Location = new System.Drawing.Point(618, 170);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(89, 31);
+            this.btnFind.TabIndex = 5;
+            this.btnFind.Text = "Tìm";
+            this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(750, 600);
+            this.panel1.TabIndex = 6;
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 600);
+            this.Controls.Add(this.btnFind);
             this.Controls.Add(this.txtFind);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnChg);
             this.Controls.Add(this.btnAddStud);
             this.Controls.Add(this.dataStudent);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.Name = "Student";
             this.Text = "Student";
             this.Load += new System.EventHandler(this.Student_Load);
@@ -142,5 +170,7 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Button btnChg;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Panel panel1;
     }
 }
