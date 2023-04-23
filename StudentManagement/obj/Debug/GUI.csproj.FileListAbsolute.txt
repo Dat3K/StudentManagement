@@ -39,5 +39,9 @@ D:\HT\CNPM\CK\StudentManagement\obj\Debug\StudentManagement.Teacher.resources
 D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Home.resources
 D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Teacher.resources
 D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Student.resources
-D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.ManageStudent.resources
 D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Main.resources
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Manager.resources
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.User.resources
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Register.resources
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.Course.resources
+D:\HT\CNPM\StudentManagement\StudentManagement\obj\Debug\StudentManagement.CourseManager.resources

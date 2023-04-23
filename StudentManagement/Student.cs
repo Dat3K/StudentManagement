@@ -29,8 +29,10 @@ namespace StudentManagement
 
         private void btnAddStud_Click(object sender, EventArgs e)
         {
-            ManageStudent manageStudent = new ManageStudent();
-            manageStudent.type = "add";
+            Manager manageStudent = new Manager
+            {
+                type = "add_student"
+            };
             manageStudent.ShowDialog();
             if (manageStudent.isClosed)
             {
@@ -63,9 +65,11 @@ namespace StudentManagement
 
         private void btnChg_Click(object sender, EventArgs e)
         {
-            ManageStudent manageStudent = new ManageStudent();
-            manageStudent.type = "update";
-            manageStudent.id = idStudent;
+            Manager manageStudent = new Manager
+            {
+                type = "update_student",
+                id = idStudent
+            };
             manageStudent.ShowDialog();
             if (manageStudent.isClosed)
             {
@@ -85,10 +89,18 @@ namespace StudentManagement
 
         }
 
-        private void txtFind_Validated(object sender, EventArgs e)
+        private void TxtFind_Validated(object sender, EventArgs e)
         {
             dataStudent.DataSource = BUS_Student.GetData();
 
+        }
+
+        private void txtFind_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnFind_Click(sender, e);
+            }
         }
     }
 }

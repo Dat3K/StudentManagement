@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_Course.cs" />
     <Compile Include="BUS_Student.cs" />
+    <Compile Include="BUS_Staff.cs" />
+    <Compile Include="BUS_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

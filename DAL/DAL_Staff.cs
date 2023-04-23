@@ -15,20 +15,20 @@ namespace DAL
 
         public static int AddStaff(DTO_Staff staff)
         {
-            string queryString = "INSERT INTO Staffs (ID, FullName, DateOfBirth, Gender, Job, Address, PhoneNumber, Email, EducationLevel, Major, WorkExperience, Language) VALUES (@ID,@FullName, @DateOfBirth, @Gender,@Job, @Address, @PhoneNumber, @Email, @EducationLevel, @Major, @WorkExperience, @Language)";
+            string queryString = "INSERT INTO Staffs (ID, Name, DOB, Gender, Job, Address, Phone, Email, Qualification, Major, Experience, Language) VALUES (@ID,@Name, @DOB, @Gender,@Job, @Address, @Phone, @Email, @Qualification, @Major, @Experience, @Language)";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@ID",staff.Id),
-                new SqlParameter("@FullName", staff.FullName),
-                new SqlParameter("@DateOfBirth", staff.DateOfBirth),
+                new SqlParameter("@Name", staff.Name),
+                new SqlParameter("@DOB", staff.DOB),
                 new SqlParameter("@Gender", staff.Gender),
                 new SqlParameter("@Job", staff.Job),
                 new SqlParameter("@Address", staff.Address),
-                new SqlParameter("@PhoneNumber",staff.PhoneNumber),
+                new SqlParameter("@Phone",staff.Phone),
                 new SqlParameter("@Email",staff.Email),
-                new SqlParameter("@EducationLevel",staff.Qualification),
+                new SqlParameter("@Qualification",staff.Qualification),
                 new SqlParameter("@Major",staff.Major),
-                new SqlParameter("@WorkExperience",staff.WorkExperience),
+                new SqlParameter("@Experience",staff.Experience),
                 new SqlParameter("@Language",staff.Language)
             };
             return Connection.ActionParamQuery(queryString, parameters);
@@ -44,7 +44,7 @@ namespace DAL
         public static string GetMaxId()
         {
             string queryString = "SELECT TOP 1 Id FROM Staffs WHERE Id LIKE 'S%' ORDER BY CONVERT(INT, SUBSTRING(Id, 3, LEN(Id) - 1)) DESC";
-            DataTable dt = Connection.GetMaxIdRow(queryString);
+            DataTable dt = Connection.SelectQuery(queryString);
             DataRow row = dt.Rows[0];
             string id = row.Field<string>("ID");
             return id;
@@ -64,20 +64,20 @@ namespace DAL
 
         public static int UpdateStaff(DTO_Staff staff)
         {
-            string queryString = "UPDATE Staffs SET FullName = @FullName, DateOfBirth = @DateOfBirth, Gender = @Gender,Job = @Job, Address = @Address, PhoneNumber = @PhoneNumber, Email = @Email, EducationLevel = @EducationLevel, Major = @Major, WorkExperience = @WorkExperience, Language = @Language WHERE Id = @Id";
+            string queryString = "UPDATE Staffs SET Name = @Name, DOB = @DOB, Gender = @Gender,Job = @Job, Address = @Address, Phone = @Phone, Email = @Email, Qualification = @Qualification, Major = @Major, Experience = @Experience, Language = @Language WHERE Id = @Id";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@ID",staff.Id),
-                new SqlParameter("@FullName", staff.FullName),
-                new SqlParameter("@DateOfBirth", staff.DateOfBirth),
+                new SqlParameter("@Name", staff.Name),
+                new SqlParameter("@DOB", staff.DOB),
                 new SqlParameter("@Gender", staff.Gender),
                 new SqlParameter("@Job", staff.Job),
                 new SqlParameter("@Address", staff.Address),
-                new SqlParameter("@PhoneNumber",staff.PhoneNumber),
+                new SqlParameter("@Phone",staff.Phone),
                 new SqlParameter("@Email",staff.Email),
-                new SqlParameter("@EducationLevel",staff.Qualification),
+                new SqlParameter("@Qualification",staff.Qualification),
                 new SqlParameter("@Major",staff.Major),
-                new SqlParameter("@WorkExperience",staff.WorkExperience),
+                new SqlParameter("@Experience",staff.Experience),
                 new SqlParameter("@Language",staff.Language)
             };
             return Connection.ActionParamQuery(queryString, parameters);

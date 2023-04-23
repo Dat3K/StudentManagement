@@ -13,16 +13,15 @@ namespace StudentManagement
 {
     public partial class Home : Form
     {
-        private int numStudent;
         public Home()
         {
             InitializeComponent();
-            numStudent = BUS_Student.GetStudentCount();
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
-            txtNumStudent.Text = numStudent.ToString();
+            txtNumStudent.Text = BUS_Student.GetStudentCount().ToString();
+            txtNumStaff.Text = BUS_Staff.GetStaffCount().ToString();
         }
     }
 }

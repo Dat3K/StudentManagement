@@ -1,6 +1,6 @@
 ﻿namespace StudentManagement
 {
-    partial class ManageStudent
+    partial class Manager
     {
         /// <summary>
         /// Required designer variable.
@@ -48,12 +48,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtLang = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.boxStudent = new System.Windows.Forms.GroupBox();
+            this.labelJob = new System.Windows.Forms.Label();
+            this.txtJob = new System.Windows.Forms.TextBox();
             this.btnGirl = new System.Windows.Forms.RadioButton();
             this.btnBoy = new System.Windows.Forms.RadioButton();
             this.txtDate = new System.Windows.Forms.MaskedTextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.boxStudent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -258,19 +260,10 @@
             this.label12.TabIndex = 22;
             this.label12.Text = "Ngôn ngữ:";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(714, 39);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 36);
-            this.btnAdd.TabIndex = 23;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // boxStudent
             // 
+            this.boxStudent.Controls.Add(this.labelJob);
+            this.boxStudent.Controls.Add(this.txtJob);
             this.boxStudent.Controls.Add(this.btnGirl);
             this.boxStudent.Controls.Add(this.label1);
             this.boxStudent.Controls.Add(this.label6);
@@ -299,6 +292,26 @@
             this.boxStudent.Size = new System.Drawing.Size(806, 389);
             this.boxStudent.TabIndex = 24;
             this.boxStudent.TabStop = false;
+            // 
+            // labelJob
+            // 
+            this.labelJob.AutoSize = true;
+            this.labelJob.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJob.Location = new System.Drawing.Point(35, 313);
+            this.labelJob.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelJob.Name = "labelJob";
+            this.labelJob.Size = new System.Drawing.Size(106, 24);
+            this.labelJob.TabIndex = 27;
+            this.labelJob.Text = "Công việc:";
+            // 
+            // txtJob
+            // 
+            this.txtJob.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJob.Location = new System.Drawing.Point(150, 311);
+            this.txtJob.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtJob.Name = "txtJob";
+            this.txtJob.Size = new System.Drawing.Size(213, 32);
+            this.txtJob.TabIndex = 26;
             // 
             // btnGirl
             // 
@@ -334,7 +347,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(633, 39);
+            this.btnUpdate.Location = new System.Drawing.Point(737, 39);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 36);
             this.btnUpdate.TabIndex = 25;
@@ -342,24 +355,36 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // ManageStudent
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(15, 29);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(319, 43);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Thông tin cá nhân:";
+            // 
+            // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(835, 482);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.boxStudent);
             this.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.Name = "ManageStudent";
+            this.Name = "Manager";
             this.Text = "AddStudent";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddStudent_FormClosed);
             this.Load += new System.EventHandler(this.AddStudent_Load);
             this.boxStudent.ResumeLayout(false);
             this.boxStudent.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -385,11 +410,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtLang;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox boxStudent;
         private System.Windows.Forms.MaskedTextBox txtDate;
         private System.Windows.Forms.RadioButton btnGirl;
         private System.Windows.Forms.RadioButton btnBoy;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelJob;
+        private System.Windows.Forms.TextBox txtJob;
     }
 }

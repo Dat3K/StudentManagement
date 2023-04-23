@@ -45,14 +45,6 @@ namespace DAL
             conn.Close();
         }
 
-        public static DataTable GetMaxIdRow(string queryString)
-        {
-            SqlDataAdapter adapter = new SqlDataAdapter(queryString, conn);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
-            return dataTable;
-        }
-
 
         public static int ActionParamQuery(string queryString, SqlParameter[] parameters)
         {

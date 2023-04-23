@@ -13,6 +13,9 @@ namespace StudentManagement
     public partial class Main : Form
     {
         private Button btnClicked;
+        public string id;
+        public string name;
+        public string job;
         public Main()
         {
             InitializeComponent();
@@ -23,6 +26,20 @@ namespace StudentManagement
             btnHome_Click(sender, e);
             btnClicked = btnHome;
             btnHome.BackColor = Color.FromArgb(141, 153, 174);
+            txtID.Text = id;
+            txtName.Text = name;
+            switch (job)
+            {
+                case "NV":
+                    btnAccount.Hide();
+                    btnTeacher.Hide();
+                    break;
+                case "GV":
+                    btnTeacher.Hide();
+                    btnAccount.Hide();
+                    btnCourse.Hide();
+                    break;
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -34,17 +51,26 @@ namespace StudentManagement
         private void btnTeacher_Click(object sender, EventArgs e)
         {
             SetBtnClickedColor(sender);
+            openChildForm(new Teacher());
+
         }
 
         private void btnCourse_Click(object sender, EventArgs e)
         {
             SetBtnClickedColor(sender);
+            openChildForm(new Course());
         }
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
             SetBtnClickedColor(sender);
             openChildForm(new Student());
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            SetBtnClickedColor(sender);
+            openChildForm(new User());
         }
 
         private void SetBtnClickedColor(object sender)
@@ -72,22 +98,26 @@ namespace StudentManagement
 
         private void BtnMouseEnter(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            if (btn != null)
+            if (sender is Button btn)
             {
                 btn.Font = new Font(btn.Font.Name, btn.Font.Size + 2, btn.Font.Style);
+
             }
         }
 
         private void BtnMouseLeave(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            if (btn != null)
+            if (sender is Button btn)
             {
                 btn.Font = new Font(btn.Font.Name, btn.Font.Size - 2, btn.Font.Style);
             }
         }
 
-
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
     }
 }

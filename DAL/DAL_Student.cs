@@ -43,7 +43,7 @@ namespace DAL
         public static string GetMaxId()
         {
             string queryString = "SELECT TOP 1 Id FROM students WHERE Id LIKE 'S%' ORDER BY CONVERT(INT, SUBSTRING(Id, 2, LEN(Id) - 1)) DESC";
-            DataTable dt = Connection.GetMaxIdRow(queryString);
+            DataTable dt = Connection.SelectQuery(queryString);
             DataRow row = dt.Rows[0];
             string id = row.Field<string>("ID");
             return id;
