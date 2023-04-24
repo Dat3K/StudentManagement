@@ -36,6 +36,7 @@
             this.btnTeacher = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnUpPass = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.Label();
@@ -161,6 +162,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnUpPass);
             this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Controls.Add(this.txtName);
             this.panel2.Controls.Add(this.txtID);
@@ -171,14 +173,29 @@
             this.panel2.Size = new System.Drawing.Size(250, 200);
             this.panel2.TabIndex = 0;
             // 
+            // btnUpPass
+            // 
+            this.btnUpPass.BackgroundImage = global::StudentManagement.Properties.Resources.carbon_password;
+            this.btnUpPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpPass.FlatAppearance.BorderSize = 0;
+            this.btnUpPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpPass.Location = new System.Drawing.Point(208, 0);
+            this.btnUpPass.Name = "btnUpPass";
+            this.btnUpPass.Size = new System.Drawing.Size(42, 45);
+            this.btnUpPass.TabIndex = 3;
+            this.btnUpPass.UseVisualStyleBackColor = true;
+            this.btnUpPass.Visible = false;
+            this.btnUpPass.Click += new System.EventHandler(this.btnUpPass_Click);
+            // 
             // btnLogOut
             // 
             this.btnLogOut.BackgroundImage = global::StudentManagement.Properties.Resources.solar_logout_2_bold;
+            this.btnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Location = new System.Drawing.Point(0, 0);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(50, 50);
+            this.btnLogOut.Size = new System.Drawing.Size(42, 45);
             this.btnLogOut.TabIndex = 1;
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
@@ -269,5 +286,6 @@
         private System.Windows.Forms.Label txtName;
         private System.Windows.Forms.Label txtID;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnUpPass;
     }
 }

@@ -81,7 +81,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(536, 32);
+            this.btnSave.Location = new System.Drawing.Point(426, 33);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 36);
             this.btnSave.TabIndex = 28;
@@ -91,21 +91,21 @@
             // 
             // boxData
             // 
-            this.boxData.Controls.Add(this.txtEDate);
             this.boxData.Controls.Add(this.labelJob);
-            this.boxData.Controls.Add(this.txtSID);
             this.boxData.Controls.Add(this.label1);
-            this.boxData.Controls.Add(this.txtSDate);
-            this.boxData.Controls.Add(this.txtDescription);
             this.boxData.Controls.Add(this.label9);
-            this.boxData.Controls.Add(this.txtID);
             this.boxData.Controls.Add(this.label2);
             this.boxData.Controls.Add(this.label3);
-            this.boxData.Controls.Add(this.txtName);
             this.boxData.Controls.Add(this.label5);
+            this.boxData.Controls.Add(this.txtEDate);
+            this.boxData.Controls.Add(this.txtSDate);
+            this.boxData.Controls.Add(this.txtSID);
+            this.boxData.Controls.Add(this.txtDescription);
+            this.boxData.Controls.Add(this.txtID);
+            this.boxData.Controls.Add(this.txtName);
             this.boxData.Location = new System.Drawing.Point(23, 61);
             this.boxData.Name = "boxData";
-            this.boxData.Size = new System.Drawing.Size(594, 457);
+            this.boxData.Size = new System.Drawing.Size(484, 457);
             this.boxData.TabIndex = 27;
             this.boxData.TabStop = false;
             // 
@@ -162,7 +162,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(184, 35);
+            this.txtID.Location = new System.Drawing.Point(184, 27);
             this.txtID.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
@@ -216,7 +216,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(647, 540);
+            this.ClientSize = new System.Drawing.Size(535, 540);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.boxData);

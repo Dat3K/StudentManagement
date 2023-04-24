@@ -14,9 +14,11 @@ namespace StudentManagement
 {
     public partial class Login : Form
     {
+        public bool loginSuccess;
         public Login()
         {
             InitializeComponent();
+            loginSuccess = false;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -26,6 +28,7 @@ namespace StudentManagement
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+            this.loginSuccess = true;
             DTO_Staff staff = BUS_Staff.GetStaffById(txtUser.Text);
             if (txtUser.Text != "admin" && staff == null)
             {
@@ -43,11 +46,12 @@ namespace StudentManagement
                 form.id = "ADMIN";
                 form.name = "admin";
                 form.job = "admin";
+
             }
             else
             {
                 DTO_User user = BUS_User.GetUserByUserId(txtUser.Text);
-                if (user == null || user.locked==true)
+                if (user == null || user.locked == true)
                 {
                     MessageBox.Show("Vui lòng liên hệ admin để mở khoá tài khoản");
                     return;
@@ -61,9 +65,7 @@ namespace StudentManagement
                 form.name = staff.Name;
                 form.job = staff.Job;
             }
-            
-            
-
+            MessageBox.Show("Đăng nhập thành công");
             if (this.Visible)
             {
                 this.Visible = false;
@@ -93,7 +95,8 @@ namespace StudentManagement
 
         private void btnShowPass_Click(object sender, EventArgs e)
         {
-            if (txtPass.PasswordChar == '●') { 
+            if (txtPass.PasswordChar == '●')
+            {
                 txtPass.PasswordChar = '\0';
             }
             else

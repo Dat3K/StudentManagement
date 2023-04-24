@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StudentManagement;
 using System;
+using System.Windows.Forms;
 
 namespace UnitTest
 {
@@ -12,15 +13,16 @@ namespace UnitTest
         public void TestLoginSuccess()
         {
             // Arrange
-            Login form = new Login();
-            form.txtUser.Text = "admin";
-            form.passwordTextBox.Text = "";
+            var loginForm = new Login();
+            var expectedUsername = "admin";
+            var expectedPassword = "";
 
             // Act
-            form.loginBtn.PerformClick();
+            loginForm.txtUser.Text = expectedUsername;
+            loginForm.txtPass.Text = expectedPassword;
+            loginForm.btnSignIn.PerformClick();
 
-            // Assert
-            Assert.IsTrue(form.loggedIn);
+            Assert.IsTrue(loginForm.loginSuccess);
         }
 
     }

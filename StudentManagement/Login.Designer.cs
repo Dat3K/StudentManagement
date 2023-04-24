@@ -124,9 +124,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.Button btnSignIn;
-        private System.Windows.Forms.TextBox txtPass;
+        public System.Windows.Forms.TextBox txtUser;
+        public System.Windows.Forms.Button btnSignIn;
+        public System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnShowPass;
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -93,6 +94,33 @@ namespace StudentManagement
                     txtMajor.Text = staff.Major;
                     txtWorkExp.Text = staff.Experience;
                     txtLang.Text = staff.Language;
+                    break;
+
+                case "print":
+                    txtJob.Hide();
+                    labelJob.Hide();
+                    DTO_Student studentP = GetStudent();
+                    txtID.Text = studentP.Id;
+                    txtName.Text = studentP.FullName;
+                    txtDate.Text = studentP.DateOfBirth.ToString();
+                    if (studentP.Gender == "Nam")
+                    {
+                        btnBoy.Checked = true;
+                        btnGirl.Checked = false;
+
+                    }
+                    else
+                    {
+                        btnBoy.Checked = false;
+                        btnGirl.Checked = true;
+                    }
+                    txtAddress.Text = studentP.Address;
+                    txtEmail.Text = studentP.Email;
+                    txtPhone.Text = studentP.PhoneNumber;
+                    txtEduLv.Text = studentP.EducationLevel;
+                    txtMajor.Text = studentP.Major;
+                    txtWorkExp.Text = studentP.WorkExperience;
+                    txtLang.Text = studentP.Language;
                     break;
 
                 default:
@@ -233,7 +261,7 @@ namespace StudentManagement
                     break;
 
                 case "add_staff":
-                    DTO_Staff staff = new DTO_Staff(txtID.Text, txtName.Text, date, getSex(),txtJob.Text, txtAddress.Text, txtPhone.Text, txtEmail.Text, txtEduLv.Text, txtMajor.Text, txtWorkExp.Text, txtLang.Text);
+                    DTO_Staff staff = new DTO_Staff(txtID.Text, txtName.Text, date, getSex(), txtJob.Text, txtAddress.Text, txtPhone.Text, txtEmail.Text, txtEduLv.Text, txtMajor.Text, txtWorkExp.Text, txtLang.Text);
                     if (!BUS_Staff.AddStaff(staff))
                     {
                         MessageBox.Show("Thêm nhân viên thất bại");
@@ -244,7 +272,7 @@ namespace StudentManagement
                     break;
 
                 case "update_staff":
-                    DTO_Staff staffUp = new DTO_Staff(txtID.Text, txtName.Text, date, getSex(),txtJob.Text, txtAddress.Text, txtPhone.Text, txtEmail.Text, txtEduLv.Text, txtMajor.Text, txtWorkExp.Text, txtLang.Text);
+                    DTO_Staff staffUp = new DTO_Staff(txtID.Text, txtName.Text, date, getSex(), txtJob.Text, txtAddress.Text, txtPhone.Text, txtEmail.Text, txtEduLv.Text, txtMajor.Text, txtWorkExp.Text, txtLang.Text);
                     if (!BUS_Staff.UpdateStaff(staffUp))
                     {
                         MessageBox.Show("Sửa nhân viên thất bại");
@@ -253,10 +281,67 @@ namespace StudentManagement
                     MessageBox.Show("Sửa nhân viên thành công");
                     break;
 
+                case "print":
+                    PrintDocument printDocument = new PrintDocument();
+                    printDocument.PrintPage += new PrintPageEventHandler(PrintPageHandler);
+                    PrintDialog printDialog = new PrintDialog();
+                    printDialog.Document = printDocument;
+
+                    if (printDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        printDocument.Print();
+                    }
+                    break;
                 default:
                     MessageBox.Show("Lỗi");
                     break;
             }
+        }
+        private void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            // Lấy thông tin học viên từ các control trên form
+            int id = int.Parse(txtID.Text);
+            string name = txtName.Text;
+            string dob = txtDate.Text;
+            string address = txtAddress.Text;
+            string phone = txtPhone.Text;
+            string email = txtEmail.Text;
+            string edLvl = txtEduLv.Text;
+            string major = txtMajor.Text;
+            string wEx = txtWorkExp.Text;
+            string language = txtLang.Text;
+
+            // Vẽ thông tin học viên lên trang in
+            int x = 100;
+            int y = 100;
+            Font font = new Font("Arial", 12);
+            Brush brush = Brushes.Black;
+
+            e.Graphics.DrawString("Id: " + id.ToString(), font, brush, new Point(x, y));
+            y += 20;
+            e.Graphics.DrawString("Họ Tên: " + name, font, brush, new Point(x, y));
+            y += 20;
+            e.Graphics.DrawString("Ngày sinh: " + dob, font, brush, new Point(x, y));
+            y += 20;
+            e.Graphics.DrawString("Địa chỉ: " + address, font, brush, new Point(x, y));
+            y += 20;
+            e.Graphics.DrawString("Điện thoại: " + phone, font, brush, new Point(x, y));
+            y += 20;
+            e.Graphics.DrawString("Email: " + email, font, brush, new Point(x, y));
+            y += 20;
+            e.Graphics.DrawString("Trình độ học vấn: " + edLvl, font, brush, new Point(x, y));
+            y += 20;
+            e.Graphics.DrawString("Ngành học: " + major, font, brush, new Point(x, y));
+            y += 20;
+            e.Graphics.DrawString("Kinh nghiệm làm việc: " + wEx, font, brush, new Point(x, y));
+            y += 20;
+            e.Graphics.DrawString("Ngôn ngữ: " + language, font, brush, new Point(x, y));
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

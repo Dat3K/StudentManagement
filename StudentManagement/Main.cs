@@ -33,11 +33,14 @@ namespace StudentManagement
                 case "NV":
                     btnAccount.Hide();
                     btnTeacher.Hide();
+                    btnUpPass.Show();
+
                     break;
                 case "GV":
                     btnTeacher.Hide();
                     btnAccount.Hide();
                     btnCourse.Hide();
+                    btnUpPass.Show();
                     break;
             }
         }
@@ -118,6 +121,14 @@ namespace StudentManagement
             this.Hide();
             Login login = new Login();
             login.Show();
+        }
+
+        private void btnUpPass_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.id = id;
+            register.type = "update_gv";
+            register.ShowDialog();
         }
     }
 }

@@ -127,11 +127,11 @@
   <data name="Home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Menu\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mdi_teacher" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Menu\mdi_teacher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Menu\Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ph_student-bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Menu\ph_student-bold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Course" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Student\Course.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,11 +142,14 @@
   <data name="banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Login\banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ph_student-bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Menu\ph_student-bold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Menu\Vector.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mdi_teacher" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Menu\mdi_teacher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ic_baseline-remove-red-eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Login\ic_baseline-remove-red-eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="solar_logout-2-bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Menu\solar_logout-2-bold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,13 +163,16 @@
   <data name="SignUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Login\SignUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="carbon_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Menu\carbon_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="material-symbols_menu-book-outline-rounded" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Menu\material-symbols_menu-book-outline-rounded.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Menu\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_baseline-remove-red-eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Login\ic_baseline-remove-red-eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="material-symbols_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Menu\material-symbols_print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

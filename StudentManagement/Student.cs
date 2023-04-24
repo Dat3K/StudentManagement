@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,7 +50,7 @@ namespace StudentManagement
 
         private void dataStudent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dataStudent.RowCount-1)
+            if (e.RowIndex >= 0 && e.RowIndex < dataStudent.RowCount - 1)
             {
                 btnDel.Enabled = true;
                 btnChg.Enabled = true;
@@ -100,6 +101,20 @@ namespace StudentManagement
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnFind_Click(sender, e);
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            Manager manageStudent = new Manager
+            {
+                type = "print",
+                id = idStudent
+            };
+            manageStudent.ShowDialog();
+            if (manageStudent.isClosed)
+            {
+                Student_Load(sender, e);
             }
         }
     }

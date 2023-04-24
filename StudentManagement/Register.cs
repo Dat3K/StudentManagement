@@ -16,6 +16,7 @@ namespace StudentManagement
     {
         public bool isClosed = false;
         public string id;
+        public string user_id;
         public string type;
         DTO_User user;
         public Register()
@@ -26,14 +27,22 @@ namespace StudentManagement
         private void Register_Load(object sender, EventArgs e)
         {
             txtID.Text=GetNewId();
-            if (type == "update")
+            if (type == "update" || type == "update_gv")
             {
                 user = BUS_User.GetUserById(id);
+                if(type == "update_gv")
+                {
+                    user = BUS_User.GetUserByUserId(id);
+                    btnLocked.Hide();
+                }
                 txtID.Text = user.Id;
                 txtUser.Text = user.UserId;
                 txtPass.Text = user.Password;
+                btnLocked.Checked = user.locked;
                 txtUser.ReadOnly = true;
                 btnRegister.Text = "Update";
+                pHeader.Show();
+                txtPass.Select();
             }
         }
         private void Register_FormClosed(object sender, FormClosedEventArgs e)
@@ -55,15 +64,15 @@ namespace StudentManagement
                 return;
             }
 
-            if (type == "update")
+            if (type == "update" || type == "update_gv")
             {
-                DTO_User user1 = new DTO_User(txtID.Text, txtUser.Text, txtPass.Text, false);
+                DTO_User user1 = new DTO_User(txtID.Text, txtUser.Text, txtPass.Text, btnLocked.Checked);
                 BUS_User.UpdateUser(user1);
                 MessageBox.Show("Cập nhật thành công");
                 this.Close();
                 return;
             }
-            DTO_User user = new DTO_User(GetNewId(), txtUser.Text, txtPass.Text, false);
+            DTO_User user = new DTO_User(GetNewId(), txtUser.Text, txtPass.Text,false);
             BUS_User.AddUser(user);
 
             MessageBox.Show("Tạo thành công");

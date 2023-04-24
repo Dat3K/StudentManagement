@@ -73,6 +73,16 @@ namespace StudentManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carbon_password {
+            get {
+                object obj = ResourceManager.GetObject("carbon_password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Course {
             get {
                 object obj = ResourceManager.GetObject("Course", resourceCulture);
@@ -146,6 +156,16 @@ namespace StudentManagement.Properties {
         internal static System.Drawing.Bitmap material_symbols_menu_book_outline_rounded {
             get {
                 object obj = ResourceManager.GetObject("material-symbols_menu-book-outline-rounded", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap material_symbols_print {
+            get {
+                object obj = ResourceManager.GetObject("material-symbols_print", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

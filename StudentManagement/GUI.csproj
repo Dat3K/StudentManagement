@@ -176,6 +176,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\Menu\material-symbols_print.png" />
+    <None Include="img\Menu\carbon_password.png" />
     <None Include="img\Login\ic_baseline-remove-red-eye.png" />
     <None Include="img\Student\Course.png" />
     <None Include="img\Student\Frame 1.png" />

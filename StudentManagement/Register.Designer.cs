@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pHeader = new System.Windows.Forms.Panel();
             this.txtHeader = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.txtID = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.txtRePass = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.btnLocked = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -56,8 +56,8 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::StudentManagement.Properties.Resources.SignUp;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.btnLocked);
+            this.panel1.Controls.Add(this.pHeader);
             this.panel1.Controls.Add(this.txtID);
             this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Controls.Add(this.txtRePass);
@@ -69,14 +69,15 @@
             this.panel1.Size = new System.Drawing.Size(500, 600);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // pHeader
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.panel2.Controls.Add(this.txtHeader);
-            this.panel2.Location = new System.Drawing.Point(105, 48);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(294, 62);
-            this.panel2.TabIndex = 6;
+            this.pHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
+            this.pHeader.Controls.Add(this.txtHeader);
+            this.pHeader.Location = new System.Drawing.Point(105, 48);
+            this.pHeader.Name = "pHeader";
+            this.pHeader.Size = new System.Drawing.Size(294, 62);
+            this.pHeader.TabIndex = 6;
+            this.pHeader.Visible = false;
             // 
             // txtHeader
             // 
@@ -89,18 +90,6 @@
             this.txtHeader.TabIndex = 0;
             this.txtHeader.Text = "ĐỔI MẬT KHẨU";
             this.txtHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(340, 561);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(154, 27);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Khoá tài khoản";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.Visible = false;
             // 
             // txtID
             // 
@@ -160,6 +149,16 @@
             this.txtUser.TabIndex = 0;
             this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
+            // btnLocked
+            // 
+            this.btnLocked.AutoSize = true;
+            this.btnLocked.Location = new System.Drawing.Point(372, 546);
+            this.btnLocked.Name = "btnLocked";
+            this.btnLocked.Size = new System.Drawing.Size(94, 27);
+            this.btnLocked.TabIndex = 7;
+            this.btnLocked.Text = "Bị khoá";
+            this.btnLocked.UseVisualStyleBackColor = true;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -178,7 +177,7 @@
             this.Load += new System.EventHandler(this.Register_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -192,8 +191,8 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label txtID;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.Label txtHeader;
+        private System.Windows.Forms.CheckBox btnLocked;
     }
 }
