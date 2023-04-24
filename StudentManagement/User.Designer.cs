@@ -174,6 +174,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataUser);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(766, 639);
             this.MinimumSize = new System.Drawing.Size(766, 639);
             this.Name = "User";

@@ -176,6 +176,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\Login\ic_baseline-remove-red-eye.png" />
     <None Include="img\Student\Course.png" />
     <None Include="img\Student\Frame 1.png" />
     <None Include="img\Menu\solar_logout-2-bold.png" />

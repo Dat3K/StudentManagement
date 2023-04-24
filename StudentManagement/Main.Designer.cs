@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.mainScreen = new System.Windows.Forms.Panel();
-            this.txtID = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnCourse = new System.Windows.Forms.Button();
             this.btnStudent = new System.Windows.Forms.Button();
             this.btnTeacher = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mainScreen = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,58 +63,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 600);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnLogOut);
-            this.panel2.Controls.Add(this.txtName);
-            this.panel2.Controls.Add(this.txtID);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 200);
-            this.panel2.TabIndex = 0;
-            // 
-            // mainScreen
-            // 
-            this.mainScreen.Controls.Add(this.pictureBox2);
-            this.mainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainScreen.Location = new System.Drawing.Point(250, 0);
-            this.mainScreen.Name = "mainScreen";
-            this.mainScreen.Size = new System.Drawing.Size(750, 600);
-            this.mainScreen.TabIndex = 1;
-            // 
-            // txtID
-            // 
-            this.txtID.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.txtID.Location = new System.Drawing.Point(52, 115);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(154, 36);
-            this.txtID.TabIndex = 1;
-            this.txtID.Text = "ID";
-            this.txtID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
-            this.txtName.Location = new System.Drawing.Point(12, 151);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(232, 33);
-            this.txtName.TabIndex = 2;
-            this.txtName.Text = "Name";
-            this.txtName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(750, 600);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // btnAccount
             // 
@@ -211,6 +159,18 @@
             this.btnHome.MouseEnter += new System.EventHandler(this.BtnMouseEnter);
             this.btnHome.MouseLeave += new System.EventHandler(this.BtnMouseLeave);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnLogOut);
+            this.panel2.Controls.Add(this.txtName);
+            this.panel2.Controls.Add(this.txtID);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(250, 200);
+            this.panel2.TabIndex = 0;
+            // 
             // btnLogOut
             // 
             this.btnLogOut.BackgroundImage = global::StudentManagement.Properties.Resources.solar_logout_2_bold;
@@ -223,6 +183,28 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
+            this.txtName.Location = new System.Drawing.Point(12, 151);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(232, 33);
+            this.txtName.TabIndex = 2;
+            this.txtName.Text = "Name";
+            this.txtName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
+            this.txtID.Location = new System.Drawing.Point(52, 115);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(154, 36);
+            this.txtID.TabIndex = 1;
+            this.txtID.Text = "ID";
+            this.txtID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -232,6 +214,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // mainScreen
+            // 
+            this.mainScreen.Controls.Add(this.pictureBox2);
+            this.mainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainScreen.Location = new System.Drawing.Point(250, 0);
+            this.mainScreen.Name = "mainScreen";
+            this.mainScreen.Size = new System.Drawing.Size(750, 600);
+            this.mainScreen.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(750, 600);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,6 +239,7 @@
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.mainScreen);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1016, 639);
             this.MinimumSize = new System.Drawing.Size(1016, 639);
             this.Name = "Main";
@@ -246,9 +247,9 @@
             this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainScreen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

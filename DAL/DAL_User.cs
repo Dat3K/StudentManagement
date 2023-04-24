@@ -38,7 +38,7 @@ namespace DAL
 
         public static int UpdateUser(DTO_User User)
         {
-            string queryString = "UPDATE users SET user_id = @user_id, password = @password,  WHERE Id = @Id";
+            string queryString = "UPDATE users SET user_id = @user_id, password = @password,locked = @locked  WHERE Id = @Id";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@ID",User.Id),

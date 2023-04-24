@@ -32,6 +32,8 @@ namespace StudentManagement
                 txtID.Text = user.Id;
                 txtUser.Text = user.UserId;
                 txtPass.Text = user.Password;
+                txtUser.ReadOnly = true;
+                btnRegister.Text = "Update";
             }
         }
         private void Register_FormClosed(object sender, FormClosedEventArgs e)
