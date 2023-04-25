@@ -108,7 +108,7 @@ namespace StudentManagement
         {
             Manager manageStudent = new Manager
             {
-                type = "print",
+                type = "print_student",
                 id = idStudent
             };
             manageStudent.ShowDialog();

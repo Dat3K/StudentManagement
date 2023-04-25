@@ -96,7 +96,8 @@ namespace StudentManagement
                     txtLang.Text = staff.Language;
                     break;
 
-                case "print":
+                case "print_student":
+                    btnUpdate.Text = "In";
                     txtJob.Hide();
                     labelJob.Hide();
                     DTO_Student studentP = GetStudent();
@@ -167,7 +168,7 @@ namespace StudentManagement
             return btnGirl.Text;
         }
 
-        // Hàm set trang thái form
+        // Hàm set trang thái forma
         private void AddStudent_FormClosed(object sender, FormClosedEventArgs e)
         {
             isClosed = true;
@@ -281,7 +282,7 @@ namespace StudentManagement
                     MessageBox.Show("Sửa nhân viên thành công");
                     break;
 
-                case "print":
+                case "print_student":
                     PrintDocument printDocument = new PrintDocument();
                     printDocument.PrintPage += new PrintPageEventHandler(PrintPageHandler);
                     PrintDialog printDialog = new PrintDialog();
@@ -292,6 +293,7 @@ namespace StudentManagement
                         printDocument.Print();
                     }
                     break;
+
                 default:
                     MessageBox.Show("Lỗi");
                     break;

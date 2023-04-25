@@ -35,13 +35,13 @@ namespace StudentManagement
                 MessageBox.Show("Username không chính xác");
                 return;
             }
-            if (txtUser.Text == "admin" && txtPass.Text != "")
+            if (txtUser.Text == "admin" && txtPass.Text != "admin")
             {
                 MessageBox.Show("Sai mật khẩu");
                 return;
             }
             Main form = new Main();
-            if (txtUser.Text == "admin" && txtPass.Text == "")
+            if (txtUser.Text == "admin" && txtPass.Text == "admin")
             {
                 form.id = "ADMIN";
                 form.name = "admin";
